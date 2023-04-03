@@ -23,14 +23,14 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static boolean task06(int a, int b, int c) {
-        if (a > 0 && b > 0 && c > 0) {
-            if ((a * a) + (b * b) == c * c
-                    || (a * a) + (c * c) == b * b
-                    || (c * c) + (b * b) == a * a) {
-                return true;
-            }
+        if (a <= 0 || b <= 0 || c <= 0) {
             return false;
+        } else if (a + b <= c
+                || (a + c) <= b
+                || (c + b) <= a) {
+            return false;
+        } else {
+            return true;
         }
-        return false;
     }
 }
